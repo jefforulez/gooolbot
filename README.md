@@ -1,9 +1,7 @@
 
-## gooolbot
+### gooolbot
 
 relay goooooools to hipchat room
-
-by @jefforulez
 
 ### description
 
@@ -33,6 +31,8 @@ hiding from your boss anyway.
 * vim config/default.json
 * node ./gooolbot.js
 
+### author
 
+[@jefforulez](https://github.com/jefforulez)
 
 
