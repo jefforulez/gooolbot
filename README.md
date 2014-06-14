@@ -33,7 +33,9 @@ hiding from your boss anyway.
 
 ### credits
 
-by [@jefforulez](https://github.com/jefforulez)
+written by [@jefforulez](https://github.com/jefforulez)
+
+thanks to:
 
 - https://github.com/charltoons/hipchatter
 - https://github.com/ttezel/twit
