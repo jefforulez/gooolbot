@@ -6,8 +6,8 @@ relay goooooools to hipchat
 ### description
 
 the [univision world cup streams](http://futbol.univision.com/) 
-seem to be on a thirty second delay.  the epsn broadcasts are another sixty seconds
-behind that. 
+seem to be on a thirty second delay.  the espn broadcasts are at least another
+sixty seconds behind that. 
 
 [@univisionsports](https://twitter.com/UnivisionSports), on the other hand, 
 seems to be tweeting in faster-than-real-time.
