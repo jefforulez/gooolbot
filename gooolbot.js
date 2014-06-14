@@ -36,7 +36,7 @@ stream.on( 'tweet', function (tweet) {
 		// debug
 		console.log( tweet )
 
-		var url = "https://twitter.com/" + screen_name + "/status/" + tweet.id_str
+		var url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
 		
 		var message = result[0] + "!!!! " + tweet.text + "<a href=" + url + ">" + url + "</a>"
 
