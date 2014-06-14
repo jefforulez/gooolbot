@@ -24,6 +24,7 @@ stream.on( 'tweet', function (tweet) {
 
 	if ( tweet.user.screen_name == config._gb.screen_name ) 
 	{
+		// log all @UnivisionSports tweets so we know gooolbot is alive
 		console.log( "[tweet] @" + tweet.user.screen_name + " : " + tweet.text )
 
 		var regex = /(Go{4,}l)/
@@ -33,12 +34,15 @@ stream.on( 'tweet', function (tweet) {
 			return
 		}
 		
-		// debug
+		// dump the whole goool tweet for debugging
 		console.log( tweet )
 
 		var url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
 		
-		var message = result[0] + "!!!! " + tweet.text + "<a href=" + url + ">" + url + "</a>"
+		var message = result[0] + "!!!! " 
+		            + tweet.text 
+		            + "<a href=" + url + ">" + url + "</a>"
+		            ;
 
 		for ( var room in config.hipchat.rooms )
 		{
