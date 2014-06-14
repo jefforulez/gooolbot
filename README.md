@@ -5,7 +5,7 @@ relay goooooools to hipchat room
 
 ### description
 
-the univision world cup streams ( http://futbol.univision.com/ ) 
+the [univision world cup streams](http://futbol.univision.com/) 
 seem to be on a one minute delay.  the epsn broadcasts are another sixty seconds
 behind that. 
 
