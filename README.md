@@ -24,15 +24,19 @@ hiding from your boss anyway.
 
 ### setup
 
-* git clone https://github.com/jefforulez/gooolbot
-* cd ./gooolbot
-* npm install hipchatter twit config
-* cp config/sample.default.json config/default.json
-* vim config/default.json
-* node ./gooolbot.js
++ git clone https://github.com/jefforulez/gooolbot
++ cd ./gooolbot
++ npm install hipchatter twit config
++ cp config/sample.default.json config/default.json
++ vim config/default.json
++ node ./gooolbot.js
 
-### author
+### credits
 
-[@jefforulez](https://github.com/jefforulez)
+- [@jefforulez](https://github.com/jefforulez)
+
+- https://github.com/charltoons/hipchatter
+- https://github.com/ttezel/twit
+- https://github.com/lorenwest/node-config
 
 
