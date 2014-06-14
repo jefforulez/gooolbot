@@ -1,13 +1,11 @@
 
-//
-// gooolbot
-//
-// relay goooooools to hipchat room
-//
-// author: @jefforulez
-//
+## gooolbot
 
-== description ==
+relay goooooools to hipchat room
+
+by @jefforulez
+
+### description
 
 the univision world cup streams ( http://futbol.univision.com/ ) 
 seem to be on a one minute delay.  the epsn broadcasts are another sixty seconds
@@ -20,13 +18,13 @@ this bot will notify you via [@hipchat](https://twitter.com/hipchat) that you sh
 immediately command-tab to that browser window that you weren't doing a good job 
 hiding from your boss anyway.
 
-== requirements ==
+### requirements
 
 - a twitter app and associated auth tokens - https://apps.twitter.com/
 - a hipchat account with a personal api token - https://www.hipchat.com/account/api
 - a hipchat room that you own with an auth token - https://www.hipchat.com/rooms
 
-== setup ==
+### setup
 
 * git clone https://github.com/jefforulez/gooolbot
 * cd ./gooolbot
