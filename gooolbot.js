@@ -16,6 +16,12 @@ var config = require( 'config' )
 config._gb = { follow : "89225092", screen_name : "UnivisionSports" }
 
 //
+// startup
+//
+
+console.log( "starting gooolbot...." ) ;
+
+//
 // hipchat
 //
 
