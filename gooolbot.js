@@ -18,13 +18,13 @@ config._gb = { follow : "89225092", screen_name : "UnivisionSports" }
 var hipchatter = new Hipchatter( config.hipchat.auth_token )
 var T          = new Twit( config.twitter )
 
-var stream = T.stream( 'statuses/filter', { follow : config._gb.follow })
+var stream = T.stream( 'statuses/sample', { follow : config._gb.follow } )
 
 stream.on( 'tweet', function (tweet) {
 
 	if ( tweet.user.screen_name == config._gb.screen_name ) 
 	{
-		console.log( "[debug] @" + tweet.user.screen_name + " : " + tweet.text )
+		console.log( "[tweet] @" + tweet.user.screen_name + " : " + tweet.text )
 
 		var regex = /(Go{4,}l)/
 		var result = tweet.text.match( regex )
@@ -42,16 +42,22 @@ stream.on( 'tweet', function (tweet) {
 
 		for ( var room in config.hipchat.rooms )
 		{
+			var r = config.hipchat.rooms[room] ;
+		
 			hipchatter.notify(
-				room.name,
+				r.name,
 				{
-					token          : room.token,
+					token          : r.token,
 					message        : message,
 					message_format : 'html',
 					notify         : true
 				}, 
-				function ( err ) { if ( err ) console.log( err ) }
+				function ( err ) { 
+					if ( err ) { console.log( err ) ; return } 
+					console.log( "[" + r.name + "] " + message ) ;
+				}
 			)
+
 		}
 
 	}
