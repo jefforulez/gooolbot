@@ -24,7 +24,7 @@ stream.on( 'tweet', function (tweet) {
 
 	if ( tweet.user.screen_name == config._gb.screen_name ) 
 	{
-		console.log( "[debug]" + tweet.text )
+		console.log( "[debug] @" + tweet.user.screen_name + " : " + tweet.text )
 
 		var regex = /(Go{4,}l)/
 		var result = tweet.text.match( regex )

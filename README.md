@@ -1,7 +1,7 @@
 
 ### gooolbot
 
-relay goooooools to hipchat
+relay goooooools to hipchat 
 
 ### description
 
