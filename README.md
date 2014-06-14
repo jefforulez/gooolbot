@@ -33,7 +33,7 @@ hiding from your boss anyway.
 
 ### credits
 
-author [@jefforulez](https://github.com/jefforulez)
+by [@jefforulez](https://github.com/jefforulez)
 
 - https://github.com/charltoons/hipchatter
 - https://github.com/ttezel/twit
