@@ -31,9 +31,9 @@ hipchatter.rooms(
 	function( err, remote_rooms )
 	{
 		// fatal error
-        if ( err ) { console.log( "[hipchat] err : " + err ) ; process.exit( 1 ) }
-        
-        // report on configured rooms
+		if ( err ) { console.log( "[hipchat] err : " + err ) ; process.exit( 1 ) }
+
+		// report on configured rooms
 		for ( var room in config.hipchat.rooms )
 		{
 			var configured_name = config.hipchat.rooms[room].name
@@ -45,8 +45,7 @@ hipchatter.rooms(
 				}
 			}
 		}
-
-    }
+	}
 )
 
 function _sendMessageToRooms( message )
