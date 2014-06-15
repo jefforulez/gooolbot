@@ -27,4 +27,4 @@ node_modules
 # config
 config/local.json
 config/runtime.json
-
+config/local-debug.json
