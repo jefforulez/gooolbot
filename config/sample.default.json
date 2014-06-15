@@ -1,4 +1,10 @@
 {
+
+	"gooolbot" : {
+		"sound" : true,
+		"soundfile" : "./media/gooolbot-signed-16bit.pcm"
+	},
+
 	"twitter" : {
 		"consumer_key"        : "..." ,
 		"consumer_secret"     : "..." ,

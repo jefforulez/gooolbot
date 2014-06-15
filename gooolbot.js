@@ -48,7 +48,7 @@ hipchatter.rooms(
 	}
 )
 
-function _sendMessageToRooms( message )
+function _hipchatSendMessageToRooms( message )
 {
 	for ( var room in config.hipchat.rooms )
 	{
@@ -105,10 +105,33 @@ stream.on( 'tweet', function (tweet) {
 		            + " <a href=" + url + ">" + url + "</a>"
 		            ;
 
-		return _sendMessageToRooms( message )
+
+		// send hipchat message
+		_hipchatSendMessageToRooms( message )
+
+		// play sound
+		_soundPlay()
 	}
 	
 })
 
+//
+// sound
+//
 
+var Speaker = require( 'speaker' )
+var fs = require( 'fs' )
 
+function _soundPlay()
+{
+	if ( ! config.gooolbot.sound ) { return }
+	
+	var speaker = new Speaker({
+		channels: 2,
+		bitDepth: 16,
+		sampleRate: 44100
+	})
+
+	fs.createReadStream( "./media/gooolbot-signed-16bit.pcm" ).pipe( speaker )
+
+}

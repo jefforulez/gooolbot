@@ -3,7 +3,7 @@
 
 relay goooooools to hipchat 
 
-![gooolbot screenshot](./gooolbot.png)
+![gooolbot screenshot](./media/gooolbot.png)
 
 ### description
 
@@ -32,6 +32,11 @@ hiding from your boss anyway.
 + cp config/sample.default.json config/default.json
 + vim config/default.json
 + node ./gooolbot.js
+
+### revisions
+
++ 2014.06.15
+- added sound support
 
 ### credits
 
