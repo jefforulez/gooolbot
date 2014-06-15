@@ -3,6 +3,8 @@
 
 relay goooooools to hipchat 
 
+![gooolbot screenshot](http://jefforulez.github.com/gooolbot/gooolbot.png)
+
 ### description
 
 the [univision world cup streams](http://futbol.univision.com/) 
