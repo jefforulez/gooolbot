@@ -36,7 +36,7 @@ hiding from your boss anyway.
 ### revisions
 
 + 2014.06.15
-+- added sound support
+	+ added sound support
 
 ### credits
 
