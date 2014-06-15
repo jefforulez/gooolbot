@@ -119,19 +119,28 @@ stream.on( 'tweet', function (tweet) {
 // sound
 //
 
-var Speaker = require( 'speaker' )
 var fs = require( 'fs' )
 
 function _soundPlay()
 {
 	if ( ! config.gooolbot.sound ) { return }
-	
-	var speaker = new Speaker({
-		channels: 2,
-		bitDepth: 16,
-		sampleRate: 44100
-	})
 
-	fs.createReadStream( "./media/gooolbot-signed-16bit.pcm" ).pipe( speaker )
+	try 
+	{
+		var Speaker = require( 'speaker' )
+	
+		var speaker = new Speaker({
+			channels: 2,
+			bitDepth: 16,
+			sampleRate: 44100
+		})
+
+		fs.createReadStream( "./media/gooolbot-signed-16bit.pcm" ).pipe( speaker )
+	}
+	catch ( ex )
+	{
+		console.log( "sound not supported" ) ;
+		console.log( ex ) ;
+	}
 
 }
