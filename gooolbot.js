@@ -103,7 +103,7 @@ stream.on( 'tweet', function (tweet) {
 		
 		var message = result[0] + "!!!! " 
 		            + tweet.text 
-		            + "<a href=" + url + ">" + url + "</a>"
+		            + " <a href=" + url + ">" + url + "</a>"
 		            ;
 
 		return _sendMessageToRooms( message )
