@@ -3,7 +3,7 @@
 
 relay goooooools to hipchat 
 
-![gooolbot screenshot](http://jefforulez.github.com/gooolbot/gooolbot.png)
+![gooolbot screenshot](./gooolbot.png)
 
 ### description
 
