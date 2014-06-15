@@ -19,7 +19,7 @@ config._gb = { follow : "89225092", screen_name : "UnivisionSports" }
 // startup
 //
 
-console.log( "starting gooolbot...." ) ;
+console.log( "starting gooolbot...." )
 
 //
 // hipchat
@@ -36,18 +36,42 @@ hipchatter.rooms(
         // report on configured rooms
 		for ( var room in config.hipchat.rooms )
 		{
-			var configured_name = config.hipchat.rooms[room].name ;
+			var configured_name = config.hipchat.rooms[room].name
 
 			for ( var remote in remote_rooms )
 			{
 				if ( configured_name == remote_rooms[remote].name ) {
-					console.log( "[hipchat] found room: " + configured_name ) ;
+					console.log( "[hipchat] found room: " + configured_name )
 				}
 			}
 		}
 
     }
 )
+
+function _sendMessageToRooms( message )
+{
+	for ( var room in config.hipchat.rooms )
+	{
+		var r = config.hipchat.rooms[room]
+	
+		hipchatter.notify(
+			r.name,
+			{
+				token          : r.token,
+				message        : message,
+				message_format : 'html',
+				notify         : true
+			}, 
+			function ( err ) { 
+				if ( err ) { console.log( "[hipchat] " + r.name + " : " + err ) ; return } 
+				console.log( "[hipchat] " + r.name + " : " + message )
+			}
+		)
+	}
+	
+	return
+}
 
 //
 // twitter
@@ -81,26 +105,10 @@ stream.on( 'tweet', function (tweet) {
 		            + "<a href=" + url + ">" + url + "</a>"
 		            ;
 
-		for ( var room in config.hipchat.rooms )
-		{
-			var r = config.hipchat.rooms[room] ;
-		
-			hipchatter.notify(
-				r.name,
-				{
-					token          : r.token,
-					message        : message,
-					message_format : 'html',
-					notify         : true
-				}, 
-				function ( err ) { 
-					if ( err ) { console.log( "[hipchat] " + r.name + " : " + err ) ; return } 
-					console.log( "[hipchat] " + r.name + " : " + message ) ;
-				}
-			)
-
-		}
-
+		return _sendMessageToRooms( message )
 	}
 	
 })
+
+
+
