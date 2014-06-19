@@ -88,7 +88,7 @@ stream.on( 'tweet', function (tweet) {
 		// log all @UnivisionSports tweets so we know gooolbot is alive
 		console.log( "[twitter] @" + tweet.user.screen_name + " : " + tweet.text )
 
-		var regex = /(Go{4,}l)/
+		var regex = /(Go{4,}l|¡GOLAZO)/
 		var result = tweet.text.match( regex )
 				
 		if ( result == null ) {
