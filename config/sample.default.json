@@ -1,7 +1,7 @@
 {
 
 	"gooolbot" : {
-		"sound" : true,
+		"sound" : false,
 		"soundfile" : "./media/gooolbot-signed-16bit.pcm"
 	},
 
