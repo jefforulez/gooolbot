@@ -92,7 +92,7 @@ stream.on( 'tweet', function (tweet) {
 
 		// detect goal
 
-		var regex_goal = /(Go{4,}l|¡GOLAZO|¡GOL!)/
+		var regex_goal = /(Go{3,}l|¡GOLAZO|¡GOL!)/i
 		var result_goal = tweet.text.match( regex_goal )
 				
 		if ( result_goal == null ) {
@@ -106,7 +106,7 @@ stream.on( 'tweet', function (tweet) {
 		
 		if ( result_score != null )
 		{
-			var s = result_score.replace( " ", "" ) ;
+			var s = result_score[0].replace( /s+/g, '' ) ;
 			
 			// skip this score if it was already seen
 			if ( s in Scores ) {
