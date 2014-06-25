@@ -15,6 +15,8 @@ var config = require( 'config' )
 
 config._gb = { follow : "89225092", screen_name : "UnivisionSports" }
 
+var Scores = {} ;
+
 //
 // startup
 //
@@ -88,11 +90,31 @@ stream.on( 'tweet', function (tweet) {
 		// log all @UnivisionSports tweets so we know gooolbot is alive
 		console.log( "[twitter] @" + tweet.user.screen_name + " : " + tweet.text )
 
-		var regex = /(Go{4,}l|¡GOLAZO)/
-		var result = tweet.text.match( regex )
+		// detect goal
+
+		var regex_goal = /(Go{4,}l|¡GOLAZO|¡GOL!)/
+		var result_goal = tweet.text.match( regex_goal )
 				
-		if ( result == null ) {
+		if ( result_goal == null ) {
 			return
+		}
+		
+		// check for duplicate score
+		
+		var regex_score = /(#\w+\s*\d+\s*-\s*\d+\s*#\w+)/
+		var result_score = tweet.text.match( regex_score )
+		
+		if ( result_score != null )
+		{
+			var s = result_score.replace( " ", "" ) ;
+			
+			// skip this score if it was already seen
+			if ( s in Scores ) {
+				console.log( "[twitter] DUPE SCORE? " + tweet.text )
+				return
+			}
+			
+			Scores[ s ] = 1 ;
 		}
 		
 		// dump the whole goool tweet for debugging
@@ -100,7 +122,7 @@ stream.on( 'tweet', function (tweet) {
 
 		var url = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
 		
-		var message = result[0] + "!!!! " 
+		var message = result_goal[0] + "!!!! " 
 		            + tweet.text 
 		            + " <a href=" + url + ">" + url + "</a>"
 		            ;
